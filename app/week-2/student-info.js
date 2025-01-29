@@ -6,7 +6,7 @@ let repo = 'https://github.com/glconde/cprg306-assignments';
 function StudentInfo() { 
     return (
         <div>
-            <h1>George Louie Conde</h1>
+            <h1 className="text-lg">George Louie Conde</h1>
             <p>
             <Link 
                 href={repo}
