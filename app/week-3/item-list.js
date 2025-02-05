@@ -91,7 +91,7 @@ const items = [
 
 export default function ItemList() {
   return (
-    <ul className="ml-2">
+    <ul className="ml-2 space-y-2">
       {items.map((item, index) => (
         <li key={index} className="list-none">
           <Item {...item} />
