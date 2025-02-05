@@ -7,7 +7,7 @@ const headerTag =
   "text-3xl font-semibold text-blue-700 mb-6 border-4 border-blue-700 p-4 m-1";
 const linkTag =
   "bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200 block w-[400px] text-lg";
-const ulTag = "flex flex-col items-center w-full gap-3 list-disc";
+const ulTag = "flex flex-col items-center w-full gap-3 list-none";
 
 export default function Home() {
   return (

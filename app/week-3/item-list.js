@@ -74,7 +74,7 @@ const item12 = {
 };
 
 //load items to array
-let items = [
+const items = [
   item1,
   item2,
   item3,
@@ -91,14 +91,10 @@ let items = [
 
 export default function ItemList() {
   return (
-    <div>
-      <ul className="list-disc ml-5">
-        {items.map((item, index) => (
-          <li key={index}>
-            <Item {...item}></Item>
-          </li>
-        ))}
-      </ul>
+    <div className="flex flex-col items-left ml-5">
+      {items.map((item, index) => (
+        <Item key={index} {...item}></Item>
+      ))}
     </div>
   );
 }
