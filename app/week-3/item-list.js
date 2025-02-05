@@ -91,10 +91,12 @@ const items = [
 
 export default function ItemList() {
   return (
-    <div className="flex flex-col items-left ml-5">
+    <ul className="ml-2">
       {items.map((item, index) => (
-        <Item key={index} {...item}></Item>
+        <li key={index} className="list-none">
+          <Item {...item} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
