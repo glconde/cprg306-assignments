@@ -34,20 +34,25 @@ export default function NewItem() {
   // return component
   return (
     <div className={componentContainer}>
+      {/* currrent quantity value */}
       <span className={outputStyle}>{quantity}</span>
+      {/*  decrement button */}
       <button
         className={`${buttonStyle} ${
           quantity === 1 ? buttonDisabledStyle : buttonActiveStyle
         }`}
         onClick={decrement}
+        disabled={quantity === 1}
       >
         -
       </button>
+      {/* increment button */}
       <button
         className={`${buttonStyle} ${
           quantity === 20 ? buttonDisabledStyle : buttonActiveStyle
         }`}
         onClick={increment}
+        disabled={quantity === 20}
       >
         +
       </button>
