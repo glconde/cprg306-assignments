@@ -9,7 +9,6 @@ export default function NewItem() {
   const [quantity, setQuantity] = useState(1);
   const [name, setName] = useState("");
   const [category, setCategory] = useState("produce");
-  const [error, setError] = useState("");
 
   // JSON categories
   const categories = [
@@ -26,13 +25,13 @@ export default function NewItem() {
     { name: "Other", category: "other" },
   ];
 
-  // event handler
+  // handle increment
   const increment = () => {
     if (quantity < 20) {
       setQuantity((q) => q + 1);
     }
   };
-
+  // handle decrement
   const decrement = () => {
     if (quantity > 1) {
       setQuantity((q) => q - 1);
@@ -41,16 +40,15 @@ export default function NewItem() {
 
   // handle submit
   const handleSubmit = (event) => {
+    // prevent default form submission
     event.preventDefault();
-
-    if (!name.trim()) {
-      setError("Item name is required.");
-      return;
-    }
-    setError("");
-
+    // create item object
+    const item = { name, quantity, category };
+    // log item object
+    console.log(item);
+    // show alert with state variables
     window.alert(`Item: ${name}\nQuantity: ${quantity}\nCategory: ${category}`);
-
+    // reset state
     setCategory("produce");
     setName("");
     setQuantity(1);
@@ -84,11 +82,10 @@ export default function NewItem() {
           value={name}
           onChange={(e) => {
             setName(e.target.value);
-            setError("");
           }}
           placeholder="Item Name"
+          required
         />
-        {error && <p className={errorStyle}>{error}</p>}
       </div>
       <div className={buttonContainer}>
         <button
