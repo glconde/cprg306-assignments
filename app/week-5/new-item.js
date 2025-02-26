@@ -42,7 +42,7 @@ export default function NewItem() {
   const handleSubmit = (event) => {
     // prevent default form submission
     event.preventDefault();
-    // create item object
+    // create item object (shorthand)
     const item = { name, quantity, category };
     // log item object
     console.log(item);
@@ -67,7 +67,6 @@ export default function NewItem() {
     "flex flex-col items-center gap-4 p-6 border rounded shadow-md w-80 mx-auto mt-10";
   const buttonContainer = "flex gap-2 items-center";
   const full = "w-full py-2";
-  const errorStyle = "text-red-500 text-sm mt-1";
   const inputContainer = "w-64";
   const inputStyle =
     "w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500";
