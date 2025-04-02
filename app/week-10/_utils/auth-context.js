@@ -9,6 +9,7 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import { auth } from "./firebase";
+//import { setPersistence, browserLocalPersistence } from "firebase/auth";
 
 const AuthContext = createContext();
 
@@ -39,6 +40,16 @@ export const AuthContextProvider = ({ children }) => {
   // firebase signout
   const firebaseSignOut = async () => {
     try {
+      if (
+        user?.providerData?.some(
+          (provider) => provider.providerId === "google.com"
+        )
+      ) {
+        const googleAuth = window.google?.accounts;
+        if (googleAuth) {
+          googleAuth.id.disableAutoSelect();
+        }
+      }
       await signOut(auth);
       window.location.reload();
     } catch (error) {

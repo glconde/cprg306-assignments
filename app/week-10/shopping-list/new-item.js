@@ -4,24 +4,11 @@ import { useState } from "react";
 
 // glc 2025
 
-// helper function to generate id
-const generateRandomId = () => {
-  const characters =
-    "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  let result = "";
-  for (let i = 0; i < 17; i++) {
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    result += characters[randomIndex];
-  }
-  return result;
-};
-
 export default function NewItem({ onAddItem }) {
   // hooks
   const [quantity, setQuantity] = useState(1);
   const [name, setName] = useState("");
   const [category, setCategory] = useState("produce");
-  const [newId, setNewId] = useState(generateRandomId());
 
   // JSON categories
   const categories = [
@@ -59,14 +46,12 @@ export default function NewItem({ onAddItem }) {
     const item = { name, quantity, category };
     // log item object
     console.log(item);
-    // show alert with state variables
-    // window.alert(`Item: ${name}\nQuantity: ${quantity}\nCategory: ${category}`);
+
     // add new
     onAddItem(item);
     // reset state
     setCategory("produce");
     setName("");
-    //setNewId(generateRandomId());
     setQuantity(1);
   };
 

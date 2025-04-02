@@ -8,14 +8,8 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function ItemList({ items, onItemSelect, onRemoveItem }) {
   const [sortBy, setSortBy] = useState("name");
-  //const [selected, setSelected] = useState(null);
 
   let itemData = items;
-
-  // const onItemSelect = (itemName) => {
-  //   console.log(itemName);
-  //   setSelected(itemName);
-  // };
 
   const sortButtons = [
     // id match sortBy state
