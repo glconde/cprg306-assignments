@@ -116,7 +116,7 @@ export default function Page() {
             className={`${buttonStyle} ${logoutStyle} ${justifiedRight}`}
             onClick={handleLogout}
           >
-            <span>Logout</span>
+            <span>Week-10 Home</span>
           </button>
         </div>
         <div className="flex flex-col lg:flex-row gap-6">
